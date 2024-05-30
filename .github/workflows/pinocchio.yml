@@ -35,12 +35,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: pinocchio setup
         run: |
-        sudo apt install -qqy lsb-release curl libeigen3-dev
-        sudo mkdir -p /etc/apt/keyrings
-        curl http://robotpkg.openrobots.org/packages/debian/robotpkg.asc | sudo tee /etc/apt/keyrings/robotpkg.asc
-        echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/robotpkg.asc] http://robotpkg.openrobots.org/packages/debian/pub $(lsb_release -cs) robotpkg" | sudo tee /etc/apt/sources.list.d/robotpkg.list
-        sudo apt update
-        sudo apt install robotpkg-py3*-pinocchio  
+          sudo apt install -qqy lsb-release curl libeigen3-dev
+          sudo mkdir -p /etc/apt/keyrings
+          curl http://robotpkg.openrobots.org/packages/debian/robotpkg.asc | sudo tee /etc/apt/keyrings/robotpkg.asc
+          echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/robotpkg.asc] http://robotpkg.openrobots.org/packages/debian/pub $(lsb_release -cs) robotpkg" | sudo tee /etc/apt/sources.list.d/robotpkg.list
+          sudo apt update
+          sudo apt install robotpkg-py3*-pinocchio  
       - name: pinocchio build test
         working-directory: ./test_pinocchio/
         run: |
